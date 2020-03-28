@@ -3,33 +3,38 @@ import { connect } from 'react-redux'
 import { weatherFetch } from '../../actions/weather.actions'
 
 var WeatherPage = ({ weather, fetchWeather }) => {
-    const [active, setActive] = useState(0)
     
+    const [active, setActive] = useState(0)
+    const { isLoading, data} = weather
     const regions = ['Dar es Salaam', 'Dodoma', 'Mwanza']
     
     const changeRegion = (index) => {
         setActive(index)
-        fetchWeather(regions[active])
+        fetchWeather(regions[index])
     }
 
     useEffect(() => {
         if (!weather.data && !weather.isLoading) {
-            fetchWeather(active)
+            fetchWeather(regions[active])
         }
     })
 
+    if (!data) {
+        return <h1>Wait...</h1>
+    }
+
     return (
         <div className="weather">
-            {weather.isLoading && <p>Loading...</p>}
+            {isLoading && <p>Loading...</p>}
             <div className="temperature">
-                <div className="degrees">81&#186;</div>
-                <div className="condition">Sunny</div>
-                <div className="region">Dar Es Salaam</div>
+                <div className="degrees">{Math.round(data.main.temp - 273.15)}&#186;</div>
+                <div className="condition">{data.weather[0].main}</div>
+                <div className="region">{data.name}</div>
             </div>
             <div className="wrapper">
-                <Card icon="fas fa-wind" value="1.6" unit="km/h" title="Wind" color="#e90391" />
-                <Card icon="fas fa-tint" value="75" unit="%" title="Humidity" color="#3b10b5" />
-                <Card icon="fas fa-tachometer-alt" value="1025" unit="hpa" title="Pressure" color="#3b10b5" />
+                <Card icon="fas fa-wind" value={data.wind.speed} unit="km/h" title="Wind" color="#e90391" />
+                <Card icon="fas fa-tint" value={data.main.humidity} unit="%" title="Humidity" color="#3b10b5" />
+                <Card icon="fas fa-tachometer-alt" value={data.main.presser} unit="hpa" title="Pressure" color="#3b10b5" />
             </div>
             <ul>
                 <li className={`${active === 0 ? 'active' : ''}`} onClick={() => changeRegion(0)}>Dar Es Salaam</li>
