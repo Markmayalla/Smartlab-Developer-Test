@@ -21,8 +21,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'WeatherAppNative' do
-  # Pods for WeatherAppNative
+target 'weatherappnative' do
+  # Pods for weatherappnative
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -54,7 +54,7 @@ target 'WeatherAppNative' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'WeatherAppNativeTests' do
+  target 'weatherappnativeTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -71,10 +71,10 @@ target 'WeatherAppNative' do
   end
 end
 
-target 'WeatherAppNative-tvOS' do
-  # Pods for WeatherAppNative-tvOS
+target 'weatherappnative-tvOS' do
+  # Pods for weatherappnative-tvOS
 
-  target 'WeatherAppNative-tvOSTests' do
+  target 'weatherappnative-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
