@@ -1,11 +1,8 @@
-import darWeatherReducer from "./darWeather.reducer";
-import dodomaWeatherReducer from "./dodomaWeather.reducer";
-import mwanzaWeatherReducer from "./mwanzaWeather.reducer";
+import weatherReducer from "./weather.reducer"
+
 
 const data = {
-    darWeather: darWeatherReducer,
-    dodomaWeather: dodomaWeatherReducer,
-    mwanzaWeather: mwanzaWeatherReducer
+   weather: weatherReducer
 }
 
 export default data

@@ -1,1 +1,111 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+body {
+  background: #e90391;
+  background: linear-gradient(173deg, #e90391 0%, #3b10b5 100%);
+  color: #fcf;
+}
+
+.weather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 90vh;
+}
+
+.weather ul {
+  all: unset;
+  position: fixed;
+  top: 30px;
+  right: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+}
+
+.weather ul li {
+  all: unset;
+  display: block;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.weather ul li.active {
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.weather .temperature {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.weather .temperature .degrees {
+  font-family: "Comfortaa", cursive;
+  font-size: 96px;
+}
+
+.weather .temperature .condition {
+  font-family: "Roboto", sans-serif;
+  font-size: 36px;
+}
+
+.weather .temperature .region {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 27vw;
+  max-width: 30vw;
+  border-radius: 10px;
+}
+
+.card i {
+  padding: 16px 0;
+}
+
+.card div {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.card div small {
+  font-size: 18px;
+}
+
+.card .title {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 8px 0;
+}
+/*# sourceMappingURL=style.css.map */

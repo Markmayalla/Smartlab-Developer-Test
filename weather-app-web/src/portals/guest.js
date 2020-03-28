@@ -1,14 +1,14 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import DarWeatherPage from '../pages/guest/darWeatherPage'
+import WeatherPage from '../pages/guest/weatherPage'
 
 const Guest = () => {
     return (
         <React.Fragment>
             <Switch>
-                <Route path="/weather/dar" component={DarWeatherPage} />
+                <Route path="/weather/default" component={WeatherPage} />
                 <Route>
-                    <Redirect to="/weather/dar" />
+                    <Redirect to="/weather/default" />
                 </Route>
             </Switch>
         </React.Fragment>
